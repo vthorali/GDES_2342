@@ -4,15 +4,15 @@
   <meta charset="UTF-8">
   <title>Happy Hour</title>
   <link rel="shortcut icon" href="favicon.ico" />
-  <link href="https://fonts.googleapis.com/css?family=Arima+Madurai:500|Lobster|Cookie|Great+Vibes" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Handlee|Rochester|Sofia" rel="stylesheet">
   <style>
     *{
         margin: 0;
         box-sizing: border-box;
     }
     body{
-        background-color: whitesmoke;
-        font-family: 'Great Vibes', cursive;
+        background-color: rgba(51,20,62,.1);
+        font-family: 'Rochester', cursive;
     }
     .wrapper{
         width: 1180px;
@@ -28,13 +28,13 @@
         border-top: 0px;
         bottom: 0;
         font-size: 40px;
-        font-family: 'Great Vibes', cursive;
+        font-family: 'Rochester', cursive;
         background-color: rgb(150,150,150);
         padding: 7px 10px;
     }
     h2{
         font-size: 40px;
-        font-family: 'Great Vibes', cursive;
+        font-family: 'Rochester', cursive;
         text-decoration: none;
     }
     a:link{
@@ -54,22 +54,22 @@
         color: rgb(190,97,16);
     }
     #index{
-        margin-right: 75px;
+        margin-right: 115px;
         display: inline;
         padding: 10px;
     }
     #about{
-        margin-right: 75px;
+        margin-right: 115px;
         display: inline;
         padding: 10px;
     }
     #menu{
-        margin-right: 75px;
+        margin-right: 115px;
         display: inline;
         padding: 10px;
     }
     #happy_hour{
-        margin-right: 75px;
+        margin-right: 115px;
         display: inline;
         padding: 10px;
     }
@@ -84,22 +84,101 @@
         font-size: 75px;
         padding: 10px;
         margin-bottom: 25px;
+        font-family: 'Great Vibes', cursive;
     }
     h1{
         text-align: center;
         font-size: 50px;
     }
     p{
-        font-family: 'Lobster', cursive;
+        font-family: 'Sofia', cursive;
         text-align: center;
         font-size: 30px;
         color: rgb(162,170,173);
     }
-    .list{
-        float: left;
-    }
     .hours{
         float:right;
+    }
+    .box {
+        width: 1180px;
+        height: 800px;
+    }
+    .popup {
+        position: relative;
+        cursor: pointer;
+        font-family: 'Sofia', cursive;
+        font-size: 30px;
+        color: rgb(162,170,173);
+        /*background-color: #4CAF50;*/
+    }
+    /* Popup container */
+    .popup:hover {
+        color: #6e687b;
+    }
+    .popup:active {
+        color: #6e687b;
+    }
+    /* The actual popup */
+    .popup .popuptext {
+        visibility: hidden;
+        background-color: rgba(69,194,204,0.6);
+        color: #6e687b;
+        position: absolute;
+        left: 471.5px;
+        /*z-index: 100;*/
+    }
+    /*!* Popup arrow *!*/
+    .popup .popuptext::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0%;
+        transform: rotate(90deg);
+        margin-top: -10px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #555 transparent transparent transparent;
+    }
+
+    /*!* Toggle this class when clicking on the popup container (hide and show the popup) *!*/
+    .popup .show {
+        visibility: visible;
+        -webkit-animation: fadeIn 1s;
+        animation: fadeIn 1s
+    }
+
+    /*!* Add animation (fade in the popup) *!*/
+    @-webkit-keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+
+    @keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity:1 ;}
+    }
+    table{
+        width: 400px;
+        top: 0px;
+        float: left;
+        font-family: 'Handlee', cursive;
+    }
+    th{
+        font-size: 25px;
+        text-align: center;
+        font-family: 'Sofia', cursive;
+    }
+    .prices{
+        float: right;
+        font-size: 20px;
+    }
+    .food_name{
+        float: left;
+        font-size: 20px;
+    }
+    .descriptions{
+        font-size: 18px;
+        float: left;
     }
   </style>
 </head>
@@ -125,26 +204,662 @@
         <header>Kiku Bistro</header>
         <h1>Happy Hour</h1>
         <br/>
-        <div class="list">
-            <p>Featuring daily food and drink specials, changing regularly.</p>
-            <br/>
-            <p>$3.00 Taps/Sake/Wine $4.00 Signature Martinis</p>
-            <p>$4.00 Premium Liquor(Jack Daniels, Jim Beam, 2 Ginger)</p>
-            <p>$5.00 Signature Drinks & Shots</p>
-            <p>1/2 Price Bottles of Wine</p>
-            <p>1/2 Price Select Appetizers</p>
-            <p>Large Selections of Chef's Special Rolls starting from $3.00</p>
-        </div>
-        <div class="hours">
-            <p>Monday - Thursday</p>
-            <p>4:30pm-7:30pm & 9:00pm-12:30am</p>
-            <br/>
-            <p>Friday</p>
-            <p>3:00pm-7:30pm & 9:00pm-1:30am</p>
-            <br/>
-            <p>Saturday - Sunday</p>
-            <p>All Day 3:00pm-1:30am</p>
-        </div>
+        <p>Featuring daily food and drink specials, changing regularly.</p>
+        <div class="box">
+            <div class="hours">
+                <p>Monday - Thursday</p>
+                <p>4:30pm-7:30pm & 9:00pm-12:30am</p>
+                <p>Friday</p>
+                <p>3:00pm-7:30pm & 9:00pm-1:30am</p>
+                <p>Saturday - Sunday</p>
+                <p>All Day 3:00pm-1:30am</p>
+            </div>
+            <div class="popup" onclick="happy_hour_drinks()">Happy Hour Drinks
+                <div class="popuptext" id="myPopup_happy_hour_drinks">
+                        <table>
+                            <tr>
+                                <th>Happy Hour Drinks</th>
+                                <th> </th>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Fuji Spring Roll</td>
+                                <td class="prices">$1.00</td>
+                            </tr>
+                </div>
+            </div>
+            <div class="popup" onclick="happy_hour_appetizers()">Happy Hour Appetizers
+                <div class="popuptext" id="myPopup_happy_hour_appetizers">
+                        <table>
+                            <tr>
+                                <th>Happy Hour Appetizers</th>
+                                <th> </th>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Fuji Spring Roll</td>
+                                <td class="prices">$1.00</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Edamame</td>
+                                <td class="prices">$3.25</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Miso Dashi Tofu</td>
+                                <td class="prices">$3.50</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Vegetable Tempura</td>
+                                <td class="prices">$3.95</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Gyoza (Pork, Shrimp, Vegetable)</td>
+                                <td class="prices">$3.95</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Seaweed Salad</td>
+                                <td class="prices">$4.00</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Shrimp Tempura</td>
+                                <td class="prices">$4.75</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Shumai (Pork, Shrimp)</td>
+                                <td class="prices">$5.25</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Ika Butter</td>
+                                <td class="prices">$4.95</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Calamari</td>
+                                <td class="prices">$4.95</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Baked Avocado</td>
+                                <td class="prices">$5.95</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Sushi Starter (4 Pieces)</td>
+                                <td class="prices">$8.95</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Sashimi Starter (6 Pieces)</td>
+                                <td class="prices">$9.95</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Yellowtail Tataki</td>
+                                <td class="prices">$9.95</td>
+                            </tr>
+                        </table>
+                </div>
+            </div>
+            <div class="popup" onclick="entrees()">Entrees from Kitchen
+                <div class="popuptext" id="myPopup_entrees">
+                        <table>
+                            <tr>
+                                <th>Entrees from Kitchen</th>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Fried Rice with Chicken</td>
+                                <td class="prices">$8.95</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Fried Rice with Beef</td>
+                                <td class="prices">$9.25</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Fried Rice with Shrimp</td>
+                                <td class="prices">$9.95</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name"> </td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Lo Mein with Chicken</td>
+                                <td class="prices">$8.95</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Lo Mein with Beef</td>
+                                <td class="prices">$9.25</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Lo Mein with Shrimp</td>
+                                <td class="prices">$9.95</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name"> </td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Tempura with Chicken</td>
+                                <td class="prices">$8.95</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Tempura with Beef</td>
+                                <td class="prices">$12.95</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Tempura with Shrimp</td>
+                                <td class="prices">$16.95</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name"> </td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Teriyaki with Chicken</td>
+                                <td class="prices">$12.95</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Teriyaki with Beef</td>
+                                <td class="prices">$13.95</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Teriyaki with Shrimp</td>
+                                <td class="prices">$14.95</td>
+                            </tr>
+                        </table>
+                </div>
+            </div>
+            <div class="popup" onclick="stir_fry()">Stir Fry
+                <div class="popuptext" id="myPopup_stir_fry">
+                        <table>
+                            <tr>
+                                <th>Stir Fry</th>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center; font-size: 22px">Select Your Protein</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Tofu</td>
+                                <td class="prices">$8.95</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Japanese Eggplant</td>
+                                <td class="prices">$8.95</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Broccoli</td>
+                                <td class="prices">$8.95</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Mixed Vegetables</td>
+                                <td class="prices">$9.95</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Chicken</td>
+                                <td class="prices">$10.95</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Beef</td>
+                                <td class="prices">$11.95</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Shrimp</td>
+                                <td class="prices">$14.95</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: center; font-size: 22px">Select Your Sauce</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Kung Pao: </td>
+                                <td class="descriptions"> sweet & spicy bean sauce</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Ginger Garlic: </td>
+                                <td class="descriptions"> ginger, oyster, & soy sauce</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Mongolian Style: </td>
+                                <td class="descriptions"> onions, scallions specialities</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">General Chicken</td>
+                                <td class="prices">$11.25</td>
+                            </tr>
+                            <tr>
+                                <td class="descriptions">Lightly breaded chicken breast in a sweet Sichuan sauce</td>
+                                <td class="prices"> </td>
+                            </tr>
+                            <tr>
+                            <tr>
+                                <td class="food_name">Sesame Chicken</td>
+                                <td class="prices">$11.25</td>
+                            </tr>
+                            <tr>
+                                <td class="descriptions">Chicken breast with sesame seeds</td>
+                                <td class="prices"> </td>
+                            </tr>
+                            <tr>
+                            <tr>
+                                <td class="food_name">Orange Beeg</td>
+                                <td class="prices">$11.95</td>
+                            </tr>
+                            <tr>
+                                <td class="descriptions">Steak with orange peel</td>
+                                <td class="prices"> </td>
+                            </tr>
+                            <tr>
+                            <tr>
+                                <td class="food_name">Avocado Salad</td>
+                                <td class="prices">$11.95</td>
+                            </tr>
+                            <tr>
+                                <td class="descriptions">Chicken breast stir fried with vegetables and fresh mango</td>
+                                <td class="prices"> </td>
+                            </tr>
+                            <tr>
+                            <tr>
+                                <td class="food_name">Beef Broccoli</td>
+                                <td class="prices">$11.95</td>
+                            </tr>
+                            <tr>
+                                <td class="descriptions">Tender all natural beef, broccoli, bamboo shoots in a light garlic wine sauce</td>
+                                <td class="prices"> </td>
+                            </tr>
+                            <tr>
+                        </table>
+                </div>
+            </div>
+            <div class="popup" onclick="happy_happy_rolls_and_hand_rolls()">Happy Happy Rolls & Hand Rolls
+                <div class="popuptext" id="myPopup_happy_happy_rolls_and_hand_rolls">
+                        <table>
+                            <tr>
+                                <th>Happy Happy Rolls and Hand Rolls</th>
+                                <th> </th>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Kanpyo Roll</td>
+                                <td class="prices">$3.00</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Oshiko Roll</td>
+                                <td class="prices">$3.00</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Avocado Roll</td>
+                                <td class="prices">$3.75</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Spicy California Roll</td>
+                                <td class="prices">$4.25</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Salmon Skin Cucumber Roll</td>
+                                <td class="prices">$4.25</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Salmon Avocado/Cucumber Roll</td>
+                                <td class="prices">$5.00</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">American Dream Roll</td>
+                                <td class="prices">$5.25</td>
+                            </tr>
+                            <tr>
+                                <td class="descriptions">Tempura Shrimp – Lettuce – Cucumber</td>
+                                <td class="prices"> </td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Eel Avocado/Cucumber Roll</td>
+                                <td class="prices">$5.50</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Kiku Spicy Tuna Roll</td>
+                                <td class="prices">$7.95</td>
+                            </tr>
+                            <tr>
+                                <td class="descriptions">Spicy Tuna – Avocado – Cucumber – Crunch – Masago – Spicy Powder</td>
+                                <td class="prices"> </td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Orange Daisy Roll</td>
+                                <td class="prices">$11.95</td>
+                            </tr>
+                            <tr>
+                                <td class="descriptions">Spicy Tuna and Salmon Mix – Crunch – Cucumber - Spicy Powder</td>
+                                <td class="prices"> </td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Vegas Roll</td>
+                                <td class="prices">$7.95</td>
+                            </tr>
+                            <tr>
+                                <td class="descriptions">Smoked Salmon – Cream Cheese – Avocado – Jalapeno – Special Sauce – Deep Fried</td>
+                                <td class="prices"> </td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Salmon/Tuna Tempura Roll</td>
+                                <td class="prices">$8.95</td>
+                            </tr>
+                            <tr>
+                                <td class="descriptions">Salmon/Tuna – Scallions – Radish – Masago – Special Sauce – Deep Fried</td>
+                                <td class="prices"> </td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Dynamite Roll (5 Pieces)</td>
+                                <td class="prices">$8.95</td>
+                            </tr>
+                            <tr>
+                                <td class="descriptions">Yellowtail Mix – Kaiware – Cucumber – Lettuce – Crunch – Scallions</td>
+                                <td class="prices"> </td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Mexican Roll (5 Pieces)</td>
+                                <td class="prices">$8.95</td>
+                            </tr>
+                            <tr>
+                                <td class="descriptions">Tuna – Escolar - Cream Cheese – Jalapeno – Avocado</td>
+                                <td class="prices"> </td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">California Ranch Roll</td>
+                                <td class="prices">$9.95</td>
+                            </tr>
+                            <tr>
+                                <td class="descriptions">Spicy Crab – Avocado – Cucumber – Cream Cheese – Masago – Deep Fried</td>
+                                <td class="prices"> </td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Pink Geisha Roll</td>
+                                <td class="prices">$9.95</td>
+                            </tr>
+                            <tr>
+                                <td class="descriptions">Shrimp – Cucumber – Jalapeno – Crunch – Spicy Crab – Masago – Soybean Paper</td>
+                                <td class="prices"> </td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Uptown Roll (4 Pieces)</td>
+                                <td class="prices">$9.95</td>
+                            </tr>
+                            <tr>
+                                <td class="descriptions">Spicy Tuna – Crunch – Avocado – Salmon – No Rice</td>
+                                <td class="prices"> </td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Winter Roll</td>
+                                <td class="prices">$9.95</td>
+                            </tr>
+                            <tr>
+                                <td class="descriptions">Spicy Flounder – Striped Bass – Red Snapper – Escolar Mix – Deep Fried</td>
+                                <td class="prices"> </td>
+                            </tr>
+                        </table>
+                </div>
+            </div>
+            <div class="popup" onclick="chef_special_rolls()">Chef’s Special Rolls
+                <div class="popuptext" id="myPopup_chef_special_rolls">
+                    <table>
+                        <tr>
+                            <th>Chef's Special Rolls</th>
+                            <th></th>
+                        </tr>
+                            <tr>
+                                <td class="food_name">Fall Roll</td>
+                                <td class="prices">$10.95</td>
+                            </tr>
+                            <tr>
+                                <td class="descriptions">Shrimp – Kanpyo – Crunch – Tuna – Salmon – Avocado – Cucumber</td>
+                                <td class="prices"> </td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Alligator Roll</td>
+                                <td class="prices">$10.95</td>
+                            </tr>
+                            <tr>
+                                <td class="descriptions">Tempura Chicken – Cream Cheese - Yamagobo - Avocado Salmon Skin Scallions - Spicy Mayo - Eel Sauce - Sriracha</td>
+                                <td class="prices"> </td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">California Moonlight Roll</td>
+                                <td class="prices">$11.95</td>
+                            </tr>
+                            <tr>
+                                <td class="descriptions">Spicy Crab – Avocado – Cucumber – Flounder - Masago</td>
+                                <td class="prices"> </td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Lake Calhoun Roll</td>
+                                <td class="prices">$10.75</td>
+                            </tr>
+                            <tr>
+                                <td class="descriptions">Tempura Salmon – Avocado – Spicy Crab - Crunch - Special Sauce</td>
+                                <td class="prices"> </td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Rainbow Roll</td>
+                                <td class="prices">$10.75</td>
+                            </tr>
+                            <tr>
+                                <td class="descriptions">Crab – Cucumber – Avocado – Salmon – Tuna – Red Snapper – Escolar</td>
+                                <td class="prices"> </td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Deep Impact Roll</td>
+                                <td class="prices">$11.25</td>
+                            </tr>
+                            <tr>
+                                <td class="descriptions">Tempura Shrimp – Spicy Tuna - Crunch</td>
+                                <td class="prices"> </td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Green Tea Roll</td>
+                                <td class="prices">$11.25</td>
+                            </tr>
+                            <tr>
+                                <td class="descriptions">Tuna – Yellowtail – Salmon – Kanpyo – Scallions – Cucumber – Crunch – Soybean Paper</td>
+                                <td class="prices"> </td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Japanese Dream Roll</td>
+                                <td class="prices">$11.25</td>
+                            </tr>
+                            <tr>
+                                <td class="descriptions">Tempura Shrimp – Avocado – Crunch - Bonito</td>
+                                <td class="prices"> </td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Spicy Girl Roll</td>
+                                <td class="prices">$10.95</td>
+                            </tr>
+                            <tr>
+                                <td class="descriptions">Spicy Tuna – Cucumber – Spicy Salmon – Crunch - Masago - Scallions</td>
+                                <td class="prices"> </td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Number 9 Roll</td>
+                                <td class="prices">$11.95</td>
+                            </tr>
+                            <tr>
+                                <td class="descriptions">Tempura Soft Shell Crab – Lettuce - Cucumber – Salmon - Avocado</td>
+                                <td class="prices"> </td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Crazy Tuna Roll</td>
+                                <td class="prices">$11.95</td>
+                            </tr>
+                            <tr>
+                                <td class="descriptions">Spicy Tuna – Cucumber – Crunch – Black Pepper Tuna - Avocado</td>
+                                <td class="prices"> </td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Lobster Roll</td>
+                                <td class="prices">$12.95</td>
+                            </tr>
+                            <tr>
+                                <td class="descriptions">Tempura Lobster – Cucumber – Lettuce - Sauce</td>
+                                <td class="prices"> </td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Dragon Roll</td>
+                                <td class="prices">$11.75</td>
+                            </tr>
+                            <tr>
+                                <td class="descriptions">Tempura Shrimp – Cucumber – Avocado</td>
+                                <td class="prices"> </td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Cornucopia Roll</td>
+                                <td class="prices">$13.25</td>
+                            </tr>
+                            <tr>
+                                <td class="descriptions">Tempura Shrimp – Cream Cheese – Tomago – Spicy Crab – Seaweed Salad - Crunch</td>
+                                <td class="prices"> </td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Tunami Roll</td>
+                                <td class="prices">$11.95</td>
+                            </tr>
+                            <tr>
+                                <td class="descriptions">Spicy Tuna – Yamagoba – Cucumber – Avocado – Albacore Tuna – Seaweed Salad</td>
+                                <td class="prices"> </td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Red and White Roll</td>
+                                <td class="prices">$11.95</td>
+                            </tr>
+                            <tr>
+                                <td class="descriptions">Eel – Avocado – Kanpyo – Crunch – Tuna – Yellowtail</td>
+                                <td class="prices"> </td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Tokyo Roll</td>
+                                <td class="prices">$13.95</td>
+                            </tr>
+                            <tr>
+                                <td class="descriptions">Tempura Shrimp – Eel – Yellowtail – Salmon – Tuna - Avocado</td>
+                                <td class="prices"> </td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Hot Zone Roll</td>
+                                <td class="prices">$14.25</td>
+                            </tr>
+                            <tr>
+                                <td class="descriptions">Blue Crab – Avocado – Cucumber – Shrimp – Crunch</td>
+                                <td class="prices"> </td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Christmas Roll</td>
+                                <td class="prices">$13.25</td>
+                            </tr>
+                            <tr>
+                                <td class="descriptions">Blue Crab – Spicy Tuna – Avocado – Two Colors of Tobiko</td>
+                                <td class="prices"> </td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">White Geisha Roll</td>
+                                <td class="prices">$13.95</td>
+                            </tr>
+                            <tr>
+                                <td class="descriptions">Spicy Tuna – Asparagus – Jalapeno – Escolar – Black Tobiko – Special Sauce</td>
+                                <td class="prices"> </td>
+                            </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="popup" onclick="happy_hour_sushi_a_la_carte()">Happy Hour Sushi A La Carte
+                <div class="popuptext" id="myPopup_happy_hour_sushi_a_la_carte">
+                        <table style="text-align: center">
+                            <tr>
+                                <th>Happy Hour Sushi A La Carte</th>
+                                <th> </th>
+                            </tr>
+                            <tr>
+                                <td class="descriptions" style="text-align: center">(1 pieces per order)</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Inari</td>
+                                <td class="prices">$2.00</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Egg</td>
+                                <td class="prices">$2.00</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Salmon</td>
+                                <td class="prices">$2.25</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Escolar</td>
+                                <td class="prices">$2.25</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Stripe Sea Bass</td>
+                                <td class="prices">$2.25</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Red Snapper</td>
+                                <td class="prices">$2.25</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Shrimp</td>
+                                <td class="prices">$2.25</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Octopus</td>
+                                <td class="prices">$2.25</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Tuna</td>
+                                <td class="prices">$2.75</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Flounder</td>
+                                <td class="prices">$2.75</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Yellowtail</td>
+                                <td class="prices">$2.75</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Spicy Salmon</td>
+                                <td class="prices">$3.00</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Spicy Tuna</td>
+                                <td class="prices">$3.25</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Spicy Octopus</td>
+                                <td class="prices">$3.25</td>
+                            </tr>
+                            <tr>
+                                <td class="food_name">Spicy Scallops</td>
+                                <td class="prices">$3.25</td>
+                            </tr>
+                        </table>
+                </div>
+            </div>
+        </div> <!--div for the box-->
     </div>
+    <script>
+    // When the user clicks on <div>, open the popup
+    function happy_hour_drinks() {
+        var popup = document.getElementById("myPopup_happy_hour_drinks");
+        popup.classList.toggle("show");
+    }
+    function happy_hour_appetizers() {
+        var popup = document.getElementById("myPopup_happy_hour_appetizers");
+        popup.classList.toggle("show");
+    }
+    function entrees() {
+        var popup = document.getElementById("myPopup_entrees");
+        popup.classList.toggle("show");
+    }
+    function stir_fry() {
+        var popup = document.getElementById("myPopup_stir_fry");
+        popup.classList.toggle("show");
+    }
+    function happy_happy_rolls_and_hand_rolls() {
+        var popup = document.getElementById("myPopup_happy_happy_rolls_and_hand_rolls");
+        popup.classList.toggle("show");
+    }
+    function chef_special_rolls() {
+        var popup = document.getElementById("myPopup_chef_special_rolls");
+        popup.classList.toggle("show");
+    }
+    function happy_hour_sushi_a_la_carte() {
+        var popup = document.getElementById("myPopup_happy_hour_sushi_a_la_carte");
+        popup.classList.toggle("show");
+    }
+    </script>
 </body>
 </html>
